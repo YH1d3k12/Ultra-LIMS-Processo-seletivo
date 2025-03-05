@@ -1,0 +1,9 @@
+.layout {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1d5e7c
+}
+
+.layout h1 {
+    color: #ffffff;
+}
