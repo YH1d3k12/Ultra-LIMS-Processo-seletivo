@@ -5,7 +5,9 @@ class ExerciseController {
     // 1) Sequência de Fibonacci.
     Fibonnaci(req, res) {
         try {
-            const result = service.Fibonnaci();
+            const result = service.Fibonnaci(
+                req.body.length
+            );
             return res.status(200).json(result);
         }
         catch (error) {
