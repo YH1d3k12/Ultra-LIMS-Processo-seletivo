@@ -9,3 +9,57 @@
   list-style: none;
   font-family: "Roboto", sans-serif;
 }
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 8%;
+  width: 100%;
+  height: calc(100vh - 80px);
+}
+
+.exercise-container {
+  padding: 12px 18px;
+  border-radius: 8px;
+  height: 600px;
+  width: 800px;
+  background-color: #ffffff;
+}
+
+.exercise-info {
+  height: 80%;
+}
+
+.exercise-title {
+  margin-bottom: 16px;
+  width: 100%;
+  color: #000000;
+  text-align: center;
+}
+
+.exercise-result {
+  height: auto;
+}
+
+.exercise-input-container {
+  height: 20%;
+}
+
+.exercise-input {
+  display: flex;
+  justify-self: flex-end;
+}
+
+.input {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  width: 100%;
+
+  color: #000000;
+  background-color: #f9f9f9;
+}

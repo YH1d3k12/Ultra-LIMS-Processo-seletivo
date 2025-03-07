@@ -3,8 +3,7 @@ import axios, { AxiosResponse } from 'axios';
 
 const baseURL = 'http://localhost:3000/';
 
-// Custom hook to handle the API request
-const useRequester = <T,>(
+const useAxios = <T,>(
     method: 'get' | 'post' | 'put' | 'delete',
     endpoint: string,
     data?: any
@@ -18,6 +17,7 @@ const useRequester = <T,>(
             try {
                 setLoading(true);
                 setError('');
+                console.log('executado');
                 const response: AxiosResponse<T> = await axios[method](
                     baseURL + endpoint,
                     data
@@ -29,10 +29,11 @@ const useRequester = <T,>(
                 setLoading(false);
             }
         };
+
         fetchData();
-    }, [method, endpoint, data]);
+    }, [method, endpoint, JSON.stringify(data)]);
 
     return { responseData, loading, error };
 };
 
-export default useRequester;
+export default useAxios;

@@ -10,7 +10,7 @@ export default function NavBar() {
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/1">Desafio I</Link>
+                        <Link to="/exercise/1">Fibonacci</Link>
                     </li>
                     <li>
                         <Link to="/2">Desafio II</Link>
