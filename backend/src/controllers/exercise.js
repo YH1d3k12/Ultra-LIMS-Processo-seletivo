@@ -64,7 +64,9 @@ class ExerciseController {
     // 5) Simulação de Saque em Caixa Eletrônico.
     GiveMeMoney(req, res) {
         try {
-            const result = service.GiveMeMoney();
+            const result = service.GiveMeMoney(
+                req.body.money
+            );
             return res.status(200).json(result);
         }
         catch (error) {

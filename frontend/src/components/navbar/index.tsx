@@ -22,7 +22,7 @@ export default function NavBar() {
                         <Link to="/4">Desafio IV</Link>
                     </li>
                     <li>
-                        <Link to="/5">Desafio V</Link>
+                        <Link to="/exercise/5">Saque de Dinheiro</Link>
                     </li>
                     <li>
                         <Link to="/6">Via Cep</Link>
