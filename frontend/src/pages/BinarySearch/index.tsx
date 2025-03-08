@@ -1,15 +1,16 @@
-import { useState } from 'react';
 import useAxios from '../../hooks/useAxios';
+import useDebounce from '../../hooks/useDebounce';
 import './styles.css';
 
 export default function BinarySearch() {
-    const [numbers, setNumbers] = useState<number[]>([
-        5, 12, 18, 23, 45, 70, 89,
-    ]);
-    const [target, setTarget] = useState<number>(23);
+    const [debouncedNumbers, numbers, setNumbers] = useDebounce<number[]>(
+        [5, 12, 18, 23, 45, 70, 89],
+        500
+    );
+    const [debouncedTarget, target, setTarget] = useDebounce<number>(23, 500);
     const { responseData } = useAxios<string>('post', 'exercise/2', {
-        numbers,
-        target,
+        numbers: debouncedNumbers,
+        target: debouncedTarget,
     });
 
     return (

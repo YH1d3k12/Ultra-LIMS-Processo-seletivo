@@ -1,11 +1,12 @@
-import { useState } from 'react';
 import useAxios from '../../hooks/useAxios';
+import useDebounce from '../../hooks/useDebounce';
 import './styles.css';
 
 export default function PerfectNumbers() {
-    const [number, setNumber] = useState<number>(28);
+    const [debouncedNumber, number, setNumber] = useDebounce<number>(28, 500);
+
     const { responseData } = useAxios<Boolean>('post', 'exercise/3', {
-        number,
+        number: debouncedNumber,
     });
 
     return (

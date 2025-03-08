@@ -1,11 +1,11 @@
-import { useState } from 'react';
 import useAxios from '../../hooks/useAxios';
+import useDebounce from '../../hooks/useDebounce';
 import './styles.css';
 
 export default function Fibonacci() {
-    const [length, setLength] = useState<number>(6);
+    const [debouncedLength, length, setLength] = useDebounce<number>(6, 500);
     const { responseData } = useAxios<Number[]>('post', 'exercise/1', {
-        length,
+        length: debouncedLength,
     });
 
     return (
