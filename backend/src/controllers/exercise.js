@@ -36,7 +36,9 @@ class ExerciseController {
     // 3) Cálculo de Números Perfeitos.
     PerfectNumbers(req, res) {
         try {
-            const result = service.PerfectNumbers();
+            const result = service.PerfectNumbers(
+                req.body.number
+            );
             return res.status(200).json(result);
         }
         catch (error) {

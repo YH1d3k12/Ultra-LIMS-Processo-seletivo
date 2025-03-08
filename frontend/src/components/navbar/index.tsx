@@ -16,7 +16,7 @@ export default function NavBar() {
                         <Link to="/exercise/2">Busca Binária</Link>
                     </li>
                     <li>
-                        <Link to="/3">Desafio III</Link>
+                        <Link to="/exercise/3">Números Perfeitos</Link>
                     </li>
                     <li>
                         <Link to="/4">Desafio IV</Link>
