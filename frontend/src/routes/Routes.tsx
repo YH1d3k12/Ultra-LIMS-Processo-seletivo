@@ -4,6 +4,7 @@ import Fibonacci from '../pages/Fibonacci';
 import BinarySearch from '../pages/BinarySearch';
 import PerfectNumbers from '../pages/PerfectNumbers';
 import GiveMeMoney from '../pages/GiveMeMoney';
+import GetCEP from '../pages/Cep';
 
 function AppRoutes() {
     return (
@@ -14,6 +15,7 @@ function AppRoutes() {
                     <Route path="exercise/2" element={<BinarySearch />} />
                     <Route path="exercise/3" element={<PerfectNumbers />} />
                     <Route path="exercise/5" element={<GiveMeMoney />} />
+                    <Route path="cep" element={<GetCEP />} />
                 </Route>
             </Routes>
         </BrowserRouter>

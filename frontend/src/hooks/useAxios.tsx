@@ -22,6 +22,7 @@ const useAxios = <T,>(
                     baseURL + endpoint,
                     data
                 );
+                console.log('response', response);
                 setResponseData(response.data);
                 setLoading(false);
             } catch (err: any) {

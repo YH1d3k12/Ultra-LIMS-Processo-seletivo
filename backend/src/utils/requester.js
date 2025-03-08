@@ -1,4 +1,4 @@
-import axios from "axios";
+const axios = require('axios');
 
 /**
  * @param {*} method The method which axios will execute "post", "get", "put" or "delete"
@@ -20,4 +20,4 @@ const Requester = async (method, baseURL, endpoint, data, callback) => {
     };
 };
 
-export default Requester;
+module.exports = Requester;
