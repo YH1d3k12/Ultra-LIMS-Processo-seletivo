@@ -21,6 +21,9 @@
 }
 
 .exercise-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 12px 18px;
   border-radius: 8px;
   height: 600px;
@@ -28,23 +31,11 @@
   background-color: #ffffff;
 }
 
-.exercise-info {
-  height: 80%;
-}
-
 .exercise-title {
   margin-bottom: 16px;
   width: 100%;
   color: #000000;
   text-align: center;
-}
-
-.exercise-result {
-  height: auto;
-}
-
-.exercise-input-container {
-  height: 20%;
 }
 
 .exercise-input {

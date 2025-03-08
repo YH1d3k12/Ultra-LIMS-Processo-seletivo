@@ -13,7 +13,7 @@ export default function NavBar() {
                         <Link to="/exercise/1">Fibonacci</Link>
                     </li>
                     <li>
-                        <Link to="/2">Desafio II</Link>
+                        <Link to="/exercise/2">Busca Binária</Link>
                     </li>
                     <li>
                         <Link to="/3">Desafio III</Link>

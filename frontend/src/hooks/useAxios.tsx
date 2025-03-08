@@ -17,7 +17,7 @@ const useAxios = <T,>(
             try {
                 setLoading(true);
                 setError('');
-                console.log('executado');
+                console.log('executado', data);
                 const response: AxiosResponse<T> = await axios[method](
                     baseURL + endpoint,
                     data

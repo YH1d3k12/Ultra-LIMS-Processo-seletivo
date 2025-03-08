@@ -14,8 +14,21 @@ class ExerciseService {
     }
 
     // 2) Implementação de Algoritmo de Busca Binária.
-    BinarySearch() {
-        return "BinarySearch";
+    BinarySearch(numbers = [5, 12, 18, 23, 45, 70, 89], target = 23) {
+        let start = 0;
+        let end = numbers.length - 1;
+
+        const Find = (start, end, numbers, target) => {
+            if (start > end) return -1;
+
+            let mid = Math.floor((start + end) / 2);
+
+            if (numbers[mid] === target) return mid;
+            if (numbers[mid] > target) return Find(start, mid - 1, numbers, target);
+            if (numbers[mid] < target) return Find(mid + 1, end, numbers, target);
+        }
+
+        return Find(start, end, numbers, target);
     }
 
     // 3) Cálculo de Números Perfeitos.

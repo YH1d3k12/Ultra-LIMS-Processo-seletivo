@@ -20,7 +20,10 @@ class ExerciseController {
     // 2) Implementação de Algoritmo de Busca Binária.
     BinarySearch(req, res) {
         try {
-            const result = service.BinarySearch();
+            const result = service.BinarySearch(
+                req.body.numbers,
+                req.body.target
+            );
             return res.status(200).json(result);
         }
         catch (error) {
