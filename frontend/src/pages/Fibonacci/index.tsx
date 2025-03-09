@@ -11,8 +11,8 @@ export default function Fibonacci() {
     return (
         <div className="page">
             <div className="exercise-container">
+                <h1 className="exercise-title">Sequência de Fibonacci</h1>
                 <div className="exercise-info">
-                    <h1 className="exercise-title">Sequência de Fibonacci</h1>
                     <p className="exercise-result">
                         Resultado: {responseData?.join(', ')}
                     </p>

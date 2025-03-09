@@ -38,6 +38,11 @@
   text-align: center;
 }
 
+.exercise-info {
+  height: auto;
+  overflow-y: auto;
+}
+
 .exercise-input {
   display: flex;
   justify-self: flex-end;

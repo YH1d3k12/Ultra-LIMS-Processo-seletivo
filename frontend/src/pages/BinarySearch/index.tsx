@@ -16,10 +16,8 @@ export default function BinarySearch() {
     return (
         <div className="page">
             <div className="exercise-container">
+                <h1 className="exercise-title">Algoritmo de Busca Binária</h1>
                 <div className="exercise-info">
-                    <h1 className="exercise-title">
-                        Algoritmo de Busca Binária
-                    </h1>
                     <p className="exercise-result">
                         Resultado: {responseData}° indice da lista
                     </p>

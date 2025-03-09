@@ -12,8 +12,8 @@ export default function PerfectNumbers() {
     return (
         <div className="page">
             <div className="exercise-container">
+                <h1 className="exercise-title">Números Perfeitos</h1>
                 <div className="exercise-info">
-                    <h1 className="exercise-title">Números Perfeitos</h1>
                     <p className="exercise-result">
                         Resultado: {responseData ? 'Verdadeiro' : 'Falso'}
                     </p>

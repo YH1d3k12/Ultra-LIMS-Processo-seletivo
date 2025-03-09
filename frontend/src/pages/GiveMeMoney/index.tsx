@@ -45,8 +45,8 @@ export default function GiveMeMoney() {
     return (
         <div className="page">
             <div className="exercise-container">
+                <h1 className="exercise-title">Saque de Dinheiro</h1>
                 <div className="exercise-info">
-                    <h1 className="exercise-title">Saque de Dinheiro</h1>
                     <p className="exercise-result">
                         Resultado:
                         <br />
