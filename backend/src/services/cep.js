@@ -19,8 +19,8 @@ class CepService {
         }
     }
 
-    async SaveAddresses(address) {
-        await fs.writeFile(FILE_PATH, JSON.stringify(address, null, 2));
+    async SaveAddresses(addresses) {
+        await fs.writeFile(FILE_PATH, JSON.stringify(addresses, null, 2));
     };
 
     async GetAddress(cep) {
