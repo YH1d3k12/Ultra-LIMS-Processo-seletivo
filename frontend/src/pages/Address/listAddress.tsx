@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useAxios from '../../hooks/useAxios';
 import ButtonGet from '../../components/buttons/buttonGet';
@@ -7,14 +8,21 @@ import './styles.css';
 
 export default function ListAddress() {
     const navigate = useNavigate();
-    const { responseData } = useAxios<Address[]>('get', `address`);
+    const [orderBy, setOrderBy] = useState('');
+    const [order, setOrder] = useState('asc');
+    const { responseData } = useAxios<Address[]>('get', `address`, {
+        params: {
+            orderBy,
+            order,
+        },
+    });
 
     const handleSearch = () => {
         navigate('/address/0');
     };
 
     const CelActions: React.FC<{ address: Address }> = ({ address }) => {
-        let formatedCep = Number(address.cep.replace(/\D/g, ''));
+        let formatedCep = address.cep.replace(/\D/g, '');
 
         return (
             <div className="cel-actions">
@@ -26,16 +34,16 @@ export default function ListAddress() {
     return (
         <div className="page">
             <div className="exercise-container">
+                <h1 className="exercise-title list-address-title">
+                    Lista de Endereços ViaCEP
+                    <button
+                        className="buttons list-address-button-search"
+                        title="procurar"
+                    >
+                        <IoSearch onClick={handleSearch} />
+                    </button>
+                </h1>
                 <div className="exercise-info">
-                    <h1 className="exercise-title list-address-title">
-                        Lista de Endereços ViaCEP
-                        <button
-                            className="buttons list-address-button-search"
-                            title="procurar"
-                        >
-                            <IoSearch onClick={handleSearch} />
-                        </button>
-                    </h1>
                     <div className="exercise-result">
                         {responseData ? (
                             <table className="table">
@@ -44,6 +52,7 @@ export default function ListAddress() {
                                         <th>CEP</th>
                                         <th>UF</th>
                                         <th>Localidade</th>
+                                        <th>Bairro</th>
                                         <th>Ações</th>
                                     </tr>
                                 </thead>
@@ -53,6 +62,7 @@ export default function ListAddress() {
                                             <td>{data.cep}</td>
                                             <td>{data.uf}</td>
                                             <td>{data.localidade}</td>
+                                            <td>{data.bairro}</td>
                                             <td>
                                                 <CelActions address={data} />
                                             </td>
@@ -64,6 +74,27 @@ export default function ListAddress() {
                             'Lista Vazia'
                         )}
                     </div>
+                </div>
+                <div className="exercise-input-container">
+                    <label htmlFor="orderBy">Ordenar Por:</label>
+                    <select
+                        id="orderBy"
+                        className="input"
+                        onChange={e => setOrderBy(e.target.value)}
+                    >
+                        <option value="">-</option>
+                        <option value="uf">UF</option>
+                        <option value="localidade">Localidade</option>
+                        <option value="bairro">Bairro</option>
+                    </select>
+                    <select
+                        id="order"
+                        className="input"
+                        onChange={e => setOrder(e.target.value)}
+                    >
+                        <option value="asc">Crescente</option>
+                        <option value="desc">Decrescente</option>
+                    </select>
                 </div>
             </div>
         </div>

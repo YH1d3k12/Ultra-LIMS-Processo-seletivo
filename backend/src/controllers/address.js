@@ -18,7 +18,10 @@ class AddressController {
 
     async ListAddresses(req, res) {
         try {
-            const result = await service.ListAddresses();
+            const result = await service.ListAddresses(
+                req.query.orderBy,
+                req.query.order
+            );
             return res.status(200).json(result);
         }
         catch (error) {

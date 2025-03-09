@@ -6,10 +6,22 @@ const FILE_PATH = path.join(__dirname, "../data/address.json");
 const BASE_URL = "https://viacep.com.br/ws/";
 
 class AddressService {
-    async ListAddresses() {
+    async ListAddresses(orderBy = null, order = 'asc') {
         try {
             const data = await fs.readFile(FILE_PATH, "utf8");
-            return JSON.parse(data);
+            let addresses = JSON.parse(data);
+
+            if (
+                orderBy !== '' &&
+                orderBy !== undefined &&
+                orderBy !== null
+            ) {
+                order === 'asc' ?
+                    addresses.sort((a, b) => a[orderBy].localeCompare(b[orderBy])) :
+                    addresses.sort((a, b) => b[orderBy].localeCompare(a[orderBy]));
+            }
+
+            return addresses;
         }
         catch (error) {
             if (error.code === 'ENOENT') {
@@ -25,8 +37,8 @@ class AddressService {
 
     async GetAddress(cep) {
         try {
+            console.log(cep)
             const data = await Requester('get', BASE_URL, cep + "/json", null, res => res.data);
-
             if (!data.cep || data.cep === "") {
                 throw new Error("CEP não encontrado");
             }

@@ -12,5 +12,61 @@
     "ibge": "4209102",
     "gia": "",
     "ddd": "47"
+  },
+  {
+    "cep": "01001-000",
+    "logradouro": "Praça da Sé",
+    "complemento": "lado ímpar",
+    "unidade": "",
+    "bairro": "Sé",
+    "localidade": "São Paulo",
+    "uf": "SP",
+    "estado": "São Paulo",
+    "regiao": "Sudeste",
+    "ibge": "3550308",
+    "gia": "1004",
+    "ddd": "11"
+  },
+  {
+    "cep": "20040-002",
+    "logradouro": "Avenida Rio Branco",
+    "complemento": "de 128 a 144 - lado par",
+    "unidade": "",
+    "bairro": "Centro",
+    "localidade": "Rio de Janeiro",
+    "uf": "RJ",
+    "estado": "Rio de Janeiro",
+    "regiao": "Sudeste",
+    "ibge": "3304557",
+    "gia": "",
+    "ddd": "21"
+  },
+  {
+    "cep": "30130-010",
+    "logradouro": "Praça Sete de Setembro",
+    "complemento": "",
+    "unidade": "",
+    "bairro": "Centro",
+    "localidade": "Belo Horizonte",
+    "uf": "MG",
+    "estado": "Minas Gerais",
+    "regiao": "Sudeste",
+    "ibge": "3106200",
+    "gia": "",
+    "ddd": "31"
+  },
+  {
+    "cep": "80010-000",
+    "logradouro": "Rua José Loureiro",
+    "complemento": "",
+    "unidade": "",
+    "bairro": "Centro",
+    "localidade": "Curitiba",
+    "uf": "PR",
+    "estado": "Paraná",
+    "regiao": "Sul",
+    "ibge": "4106902",
+    "gia": "",
+    "ddd": "41"
   }
 ]
