@@ -55,6 +55,48 @@
   background-color: #f9f9f9;
 }
 
+.table {
+  border-collapse: collapse;
+  border-radius: 5px 5px 0px 0px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+/**************** Table Header Row *****************/
+.table thead tr {
+  background-color: #1f1e1d;
+  color: #FFA500;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.table thead th {
+  text-align: center;
+}
+
+/**************** Table Header and Cell *****************/
+.table th,
+.table td {
+  padding: 8px 10px;
+  font-size: 0.8rem;
+}
+
+/**************** Table Body Row *****************/
+.table tbody tr {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #dddddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+  background-color: #f1f1f1;
+}
+
+.table tbody tr:last-of-type {
+  border-bottom: 3px solid #1f1e1d;
+}
+
 @media screen and (max-width: 1024px) {
   .exercise-container {
     width: 100%;

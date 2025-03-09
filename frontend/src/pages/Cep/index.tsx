@@ -27,21 +27,64 @@ export default function GetCEP() {
                 <div className="exercise-info">
                     <h1 className="exercise-title">Busca CEP</h1>
                     <div className="exercise-result">
-                        {responseData ? (
-                            <>
-                                <p>CEP: {responseData.cep}</p>
-                                <p>Logradouro: {responseData.logradouro}</p>
-                                <p>Complemento: {responseData.complemento}</p>
-                                <p>Unidade: {responseData.unidade}</p>
-                                <p>Bairro: {responseData.bairro}</p>
-                                <p>Localidade: {responseData.localidade}</p>
-                                <p>UF: {responseData.uf}</p>
-                                <p>Estado: {responseData.estado}</p>
-                                <p>Região: {responseData.regiao}</p>
-                                <p>IBGE: {responseData.ibge}</p>
-                                <p>GIA: {responseData.gia}</p>
-                                <p>DDD: {responseData.ddd}</p>
-                            </>
+                        {responseData?.cep ? (
+                            <table className="table">
+                                <thead>
+                                    <tr>
+                                        <th colSpan={2}>Informações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>CEP</td>
+                                        <td>{responseData.cep}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Logradouro</td>
+                                        <td>{responseData.logradouro}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Complemento</td>
+                                        <td>{responseData.complemento}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Unidade</td>
+                                        <td>{responseData.unidade}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bairro</td>
+                                        <td>{responseData.bairro}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Localidade</td>
+                                        <td>{responseData.localidade}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>UF</td>
+                                        <td>{responseData.uf}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Estado</td>
+                                        <td>{responseData.estado}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Região</td>
+                                        <td>{responseData.regiao}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>IBGE</td>
+                                        <td>{responseData.ibge}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GIA</td>
+                                        <td>{responseData.gia}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DDD</td>
+                                        <td>{responseData.ddd}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         ) : (
                             'CEP não encontrado'
                         )}
