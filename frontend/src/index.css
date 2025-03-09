@@ -72,10 +72,6 @@
   text-align: left;
 }
 
-.table thead th {
-  text-align: center;
-}
-
 /**************** Table Header and Cell *****************/
 .table th,
 .table td {

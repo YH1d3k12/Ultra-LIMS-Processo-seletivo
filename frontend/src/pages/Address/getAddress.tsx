@@ -1,37 +1,26 @@
 import useAxios from '../../hooks/useAxios';
 import useDebounce from '../../hooks/useDebounce';
+import Address from './share';
 import './styles.css';
 
-interface CEP {
-    cep: string;
-    logradouro: string;
-    complemento: string;
-    unidade: string;
-    bairro: string;
-    localidade: string;
-    uf: string;
-    estado: string;
-    regiao: string;
-    ibge: string;
-    gia: string;
-    ddd: string;
-}
-
-export default function GetCEP() {
+export default function GetAddress() {
     const [debouncedCEP, cep, setCEP] = useDebounce<number>(89216284, 500);
-    const { responseData } = useAxios<CEP>('get', `cep/${debouncedCEP}`);
+    const { responseData } = useAxios<Address>(
+        'get',
+        `address/${debouncedCEP}`
+    );
 
     return (
         <div className="page">
             <div className="exercise-container">
                 <div className="exercise-info">
-                    <h1 className="exercise-title">Busca CEP</h1>
+                    <h1 className="exercise-title">Buscar Endereço ViaCEP</h1>
                     <div className="exercise-result">
                         {responseData?.cep ? (
                             <table className="table">
                                 <thead>
                                     <tr>
-                                        <th colSpan={2}>Informações</th>
+                                        <th colSpan={2}></th>
                                     </tr>
                                 </thead>
                                 <tbody>
