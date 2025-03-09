@@ -7,6 +7,12 @@
     background-color: white;
 }
 
+.header-icon svg {
+    width: 30px;
+    height: 30px;
+    color: #000000;
+}
+
 .navbar {
     width: 100%;
 }
@@ -16,4 +22,14 @@
     flex-direction: row;
     justify-content: flex-end;
     gap: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #000000;
+}
+
+.navbar ul li a:hover {
+    color: #FF0000;
 }
