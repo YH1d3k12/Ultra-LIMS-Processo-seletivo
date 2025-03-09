@@ -25,7 +25,7 @@ export default function NavBar() {
                         <Link to="/exercise/5">Saque de Dinheiro</Link>
                     </li>
                     <li>
-                        <Link to="/cep">Via Cep</Link>
+                        <Link to="/address">ViaCEP</Link>
                     </li>
                 </ul>
             </nav>

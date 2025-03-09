@@ -1,10 +1,20 @@
 import useAxios from '../../hooks/useAxios';
+import ButtonGet from '../../components/buttons/buttonGet';
 import Address from './share';
 import './styles.css';
 
 export default function ListAddress() {
     const { responseData } = useAxios<Address[]>('get', `address`);
-    console.log(responseData);
+
+    const CelActions: React.FC<{ address: Address }> = ({ address }) => {
+        let formatedCep = Number(address.cep.replace(/\D/g, ''));
+
+        return (
+            <div className="cel-actions">
+                <ButtonGet path="address" entityId={formatedCep} />
+            </div>
+        );
+    };
 
     return (
         <div className="page">
@@ -21,6 +31,7 @@ export default function ListAddress() {
                                         <th>CEP</th>
                                         <th>UF</th>
                                         <th>Localidade</th>
+                                        <th>Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -29,6 +40,9 @@ export default function ListAddress() {
                                             <td>{data.cep}</td>
                                             <td>{data.uf}</td>
                                             <td>{data.localidade}</td>
+                                            <td>
+                                                <CelActions address={data} />
+                                            </td>
                                         </tr>
                                     ))}
                                 </tbody>

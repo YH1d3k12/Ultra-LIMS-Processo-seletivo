@@ -1,10 +1,14 @@
+import { useLocation, useParams } from 'react-router-dom';
 import useAxios from '../../hooks/useAxios';
 import useDebounce from '../../hooks/useDebounce';
 import Address from './share';
 import './styles.css';
 
 export default function GetAddress() {
-    const [debouncedCEP, cep, setCEP] = useDebounce<number>(89216284, 500);
+    const location = useLocation();
+    const { id: cepParam } = useParams();
+    const id = Number(location.state?.id || cepParam);
+    const [debouncedCEP, cep, setCEP] = useDebounce<number>(id, 500);
     const { responseData } = useAxios<Address>(
         'get',
         `address/${debouncedCEP}`
