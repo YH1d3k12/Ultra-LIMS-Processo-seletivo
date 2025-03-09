@@ -15,7 +15,7 @@ const Requester = async (method, baseURL, endpoint, data, callback) => {
         return callback(response)
     }
     catch (error) {
-        console.log(error, error.response);
+        // console.log(error, error.response);
         throw new Error(error);
     };
 };

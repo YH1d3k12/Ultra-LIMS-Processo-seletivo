@@ -17,7 +17,7 @@ function AppRoutes() {
                     <Route path="exercise/3" element={<PerfectNumbers />} />
                     <Route path="exercise/5" element={<GiveMeMoney />} />
                     <Route path="address" element={<ListAddress />} />
-                    <Route path="address/:cep" element={<GetAddress />} />
+                    <Route path="address/:id" element={<GetAddress />} />
                 </Route>
             </Routes>
         </BrowserRouter>

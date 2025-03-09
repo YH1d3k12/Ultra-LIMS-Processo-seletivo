@@ -4,23 +4,14 @@ import './styles.css';
 
 interface ButtonGetProps {
     path: string;
-    entityId: number;
-    handleOperation?: (id: number) => void;
+    entityId: number | string;
     params?: Record<string, unknown>;
 }
 
-export default function ButtonGet({
-    path,
-    entityId,
-    handleOperation,
-    params,
-}: ButtonGetProps) {
+export default function ButtonGet({ path, entityId, params }: ButtonGetProps) {
     const navigate = useNavigate();
 
     const handleGet = () => {
-        if (handleOperation) {
-            handleOperation(entityId);
-        }
         navigate(`/${path}/${entityId}`, {
             state: { id: entityId, ...params },
         });

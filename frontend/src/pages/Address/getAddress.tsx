@@ -8,9 +8,9 @@ import './styles.css';
 export default function GetAddress() {
     const navigate = useNavigate();
     const location = useLocation();
-    const { id: cepParam } = useParams();
-    const id = Number(location.state?.id || cepParam);
-    const [debouncedCEP, cep, setCEP] = useDebounce<number>(id ? id : 0, 500);
+    const { id: entityId } = useParams();
+    const id = location.state?.id || entityId;
+    const [debouncedCEP, cep, setCEP] = useDebounce<string>(id, 500);
     const { responseData } = useAxios<Address>(
         'get',
         `address/${debouncedCEP}`
@@ -102,9 +102,9 @@ export default function GetAddress() {
                     <input
                         id="cep"
                         className="input"
-                        type="number"
+                        type="text"
                         value={cep}
-                        onChange={e => setCEP(parseInt(e.target.value))}
+                        onChange={e => setCEP(e.target.value)}
                     />
                 </div>
             </div>
