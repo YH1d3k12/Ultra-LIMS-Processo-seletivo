@@ -1,0 +1,17 @@
+.get-address-title,
+.list-address-title {
+    position: relative;
+}
+
+.get-address-button-back,
+.list-address-button-search {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.get-address-button-back svg,
+.list-address-button-search svg {
+    height: 40px;
+    width: 40px;
+}
