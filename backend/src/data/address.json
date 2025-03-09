@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "cep": "89216-284",
+    "logradouro": "Rua Otto Boehm",
+    "complemento": "de 862/863 ao fim",
+    "unidade": "",
+    "bairro": "Glória",
+    "localidade": "Joinville",
+    "uf": "SC",
+    "estado": "Santa Catarina",
+    "regiao": "Sul",
+    "ibge": "4209102",
+    "gia": "",
+    "ddd": "47"
+  }
+]

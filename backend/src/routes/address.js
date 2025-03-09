@@ -1,7 +1,7 @@
 const express = require('express');
-const CepController = require('../controllers/cep.js');
+const AddressController = require('../controllers/address.js');
 
-const controller = new CepController();
+const controller = new AddressController();
 const router = express.Router();
 
 router.get('/:cep', controller.GetAddress);

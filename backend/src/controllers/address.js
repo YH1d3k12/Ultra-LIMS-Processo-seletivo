@@ -1,7 +1,7 @@
-const CepService = require('../services/cep');
-const service = new CepService();
+const AddressService = require('../services/address');
+const service = new AddressService();
 
-class CepController {
+class AddressController {
     async GetAddress(req, res) {
         try {
             const result = await service.GetAddress(
@@ -16,9 +16,9 @@ class CepController {
         }
     }
 
-    ListAddresses(req, res) {
+    async ListAddresses(req, res) {
         try {
-            const result = service.ListAddresses();
+            const result = await service.ListAddresses();
             return res.status(200).json(result);
         }
         catch (error) {
@@ -29,4 +29,4 @@ class CepController {
     }
 }
 
-module.exports = CepController;
+module.exports = AddressController;

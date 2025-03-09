@@ -5,7 +5,7 @@ const Requester = require("../utils/requester");
 const FILE_PATH = path.join(__dirname, "../data/address.json");
 const BASE_URL = "https://viacep.com.br/ws/";
 
-class CepService {
+class AddressService {
     async ListAddresses() {
         try {
             const data = await fs.readFile(FILE_PATH, "utf8");
@@ -26,6 +26,10 @@ class CepService {
     async GetAddress(cep) {
         try {
             const data = await Requester('get', BASE_URL, cep + "/json", null, res => res.data);
+
+            if (!data.cep || data.cep === "") {
+                throw new Error("CEP não encontrado");
+            }
 
             const address = {
                 cep: data.cep,
@@ -56,4 +60,4 @@ class CepService {
     };
 }
 
-module.exports = CepService;
+module.exports = AddressService;
